@@ -9,13 +9,13 @@ import (
  _ "github.com/go-sql-driver/mysql")
  
 
-
 type MyMenu struct {
 	Makanan string 
 	Harga int
 	Kantin string 
 }
 
+//program utama
 func main() {
 	 
 	port := 8181
@@ -38,7 +38,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%v",port),nil))
 }
 
-
+//fungsi untuk menampilkan semua database makanan
 func GetAllFood(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/kantin")
 	
@@ -66,6 +66,7 @@ func GetAllFood(w http.ResponseWriter, r *http.Request) {
 	err = rows.Err()
 }
 
+//fungsi untuk menampilkan data makanan tertentu
 func GetFood(w http.ResponseWriter, r *http.Request, Makanan string) {
 	//idfood, _ := strconv.Atoi(id)
 
