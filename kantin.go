@@ -40,7 +40,7 @@ func main() {
 
 //fungsi untuk menampilkan semua database makanan
 func GetAllFood(w http.ResponseWriter, r *http.Request) {
-	db, err := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/kantin")
+	db, err := sql.Open("mysql", "root:@tcp(127.205.67.251:3306)/foodservice")
 	
 	if err!= nil {
 		log.Fatal(err)
@@ -70,7 +70,7 @@ func GetAllFood(w http.ResponseWriter, r *http.Request) {
 func GetFood(w http.ResponseWriter, r *http.Request, Makanan string) {
 	//idfood, _ := strconv.Atoi(id)
 
-	db, err := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/kantin")
+	db, err := sql.Open("mysql", "root:@tcp(127.205.67.251:3306)/foodservice")
 	
 	if err!= nil {
 		log.Fatal(err)
