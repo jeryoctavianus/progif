@@ -8,7 +8,6 @@ import (
  "database/sql"
  _ "github.com/go-sql-driver/mysql")
  
-
 type MyMenu struct {
 	Makanan string 
 	Harga int
